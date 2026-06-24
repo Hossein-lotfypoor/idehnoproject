@@ -41,4 +41,12 @@ if (fs.existsSync(source404)) {
   console.log('404.html copied to dist/');
 }
 
+// Copy .nojekyll from public to dist
+const sourceNojekyll = path.join(publicDir, '.nojekyll');
+const targetNojekyll = path.join(targetDir, '.nojekyll');
+if (fs.existsSync(sourceNojekyll)) {
+  fs.copyFileSync(sourceNojekyll, targetNojekyll);
+  console.log('.nojekyll copied to dist/');
+}
+
 console.log('Build files copied to dist/ folder for GitHub Pages');
