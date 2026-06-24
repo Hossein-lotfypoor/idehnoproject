@@ -1,15 +1,129 @@
 @import "tailwindcss";
 
+/* ۱. معرفی فایل فونت به مرورگر */
+@font-face {
+  font-family: "MyDana";
+  /* مسیر دقیق بر اساس عکس اول تو */
+  src: url("./assets/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  /* ۲. جایگزین کردن فونت خودت به جای Inter */
+  --font-sans: "MyDana", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html,
 body {
+  /* ۳. اضافه کردن فونت به بدنه اصلی سایت */
+  font-family: var(--font-sans) ;
+  
   @apply bg-white dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+/* انیمیشن قطرات آب */
+@keyframes water-drop {
+  0% {
+    transform: translateY(-20vh) scaleY(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(120vh) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes water-spray {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) translateX(var(--spray-x)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-water-drop {
+  animation: water-drop linear infinite;
+}
+
+.animate-water-spray {
+  animation: water-spray linear infinite;
+}
+
+/* انیمیشن اسلایدشو */
+@keyframes slide-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-slide-fade {
+  animation: slide-fade 4s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+/* انیمیشن تلویزیونی - Ken Burns effect */
+@keyframes tv-commercial {
+  0% {
+    opacity: 0;
+    transform: scale(1.1) translateX(-2%);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15) translateX(2%);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1.2) translateX(-1%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25) translateX(1%);
+  }
+}
+
+.animate-tv-commercial {
+  animation: tv-commercial 3s ease-in-out forwards;
 }
