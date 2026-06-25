@@ -103,7 +103,7 @@ export default function Home() {
         {isWaterFlowing && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* قطرات اصلی */}
-            {Array.from({ length: 1800 }).map((_, i) => {
+            {Array.from({ length: 200 }).map((_, i) => {
               const size = Math.random() * 2 + 1.5;
               const sprayX = (Math.random() - 0.5) * 250;
               return (
@@ -124,14 +124,14 @@ export default function Home() {
               );
             })}
             {/* قطرات ریز مه‌آلود */}
-            {Array.from({ length: 200 }).map((_, i) => (
+            {Array.from({ length: 100 }).map((_, i) => (
               <div
                 key={`mist-${i}`}
                 className="absolute rounded-full animate-water-drop"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: '0',
-                  width: `${Math.random() * 1.5 + 0.5}px`,
+                  width: `${Math.random() * 1.5 + 1.5}px`,
                   height: `${Math.random() * 3 + 1}px`,
                   background: 'rgba(200, 230, 255, 0.4)',
                   animationDelay: `${Math.random() * 4}s`,
@@ -325,6 +325,7 @@ export default function Home() {
       >
         <img
           src="images/hero-faucet.jpg"
+          loading="lazy"
           alt="دسته شیر"
           className="w-full h-full object-cover rounded-full"
         />
@@ -339,6 +340,7 @@ export default function Home() {
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="images/idehnologo.png"
+                  loading="lazy"
                   alt="ایده نو"
                   className="h-12 w-auto"
                 />
