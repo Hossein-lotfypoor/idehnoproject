@@ -1,6 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
- basename: process.env.NODE_ENV === 'production' ? '/idehnoproject/' : '/',
+basename: '/idehnoproject/', // 👈 به صورت ثابت و بدون شرط بگذارید
   ssr: false,
 } satisfies Config;
