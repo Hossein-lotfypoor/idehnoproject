@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // آدرس پوشه عکس‌ها
-const imageDir = './public/images/products';
+const imageDir = './publicimages/products';
 // جایی که فایل نهایی ذخیره می‌شود
 const outputFilePath = './app/data/products.json';
 
@@ -22,7 +22,7 @@ try {
       price: 0, // قیمت را فعلاً صفر می‌گذاریم
       description: `محصول مدل ${cleanName} با طراحی مدرن و ۵ سال ضمانت تعویض.`,
       category: category,
-      image: `/images/products/${file}`,
+      image: `images/products/${file}`,
       rating: { rate: 5, count: 1 }
     };
   });
