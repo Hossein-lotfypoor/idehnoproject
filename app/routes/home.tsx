@@ -15,12 +15,12 @@ export default function Home() {
   const itemsPerPage = 8;
 
   const slideshowImages = [
-    "/images/slideheader.jpg",
-    "/images/1.png",
-    "/images/2.png",
-    "/images/3.png",
-    "/images/4.png",
-    "/images/5.png",
+    "images/slideheader.jpg",
+    "images/1.png",
+    "images/2.png",
+    "images/3.png",
+    "images/4.png",
+    "images/5.png",
   ];
 
   const categories = ["همه", "دوش", "روشویی", "سینک", "توالت"];
