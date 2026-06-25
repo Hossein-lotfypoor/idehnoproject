@@ -26,9 +26,9 @@ export default function Home() {
   const categories = ["همه", "دوش", "روشویی", "سینک", "توالت"];
 
   const categoryBoxes = [
-    { id: 1, name: "مجموعه دوش و حمام", subtitle: "طراحی‌های ارگونومیک برای آرامش بیشتر", image: "/images/cat-shower .jpg", size: "large" },
-    { id: 2, name: "آشپزخانه", subtitle: "", image: "/images/cat-kitchen.jpg", size: "small" },
-    { id: 3, name: "روشویی", subtitle: "", image: "/images/cat-basin.jpg", size: "small" },
+    { id: 1, name: "مجموعه دوش و حمام", subtitle: "طراحی‌های ارگونومیک برای آرامش بیشتر", image: "images/cat-shower .jpg", size: "large" },
+    { id: 2, name: "آشپزخانه", subtitle: "", image: "images/cat-kitchen.jpg", size: "small" },
+    { id: 3, name: "روشویی", subtitle: "", image: "images/cat-basin.jpg", size: "small" },
   ];
 
   useEffect(() => {
@@ -324,7 +324,7 @@ export default function Home() {
         }}
       >
         <img
-          src="/images/hero-faucet.jpg"
+          src="images/hero-faucet.jpg"
           alt="دسته شیر"
           className="w-full h-full object-cover rounded-full"
         />
@@ -338,7 +338,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/images/idehnologo.png"
+                  src="images/idehnologo.png"
                   alt="ایده نو"
                   className="h-12 w-auto"
                 />
