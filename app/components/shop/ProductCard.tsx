@@ -1,15 +1,15 @@
-import type { Product } from "../../constants/types";
-import { useState } from "react";
+import type { Product } from "../../utils/types";
+import { useState, memo } from "react";
 
-export default function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product }: { product: Product }) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="group bg-white border border-gray-200 rounded-2xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
+    <article className="group bg-white border border-gray-200 rounded-2xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
       {/* بخش تصویر محصول */}
       <div className="relative aspect-square mb-4 overflow-hidden rounded-xl bg-gray-50">
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-gray-100 animate-pulse" />
+          <div className="absolute inset-0 bg-gray-100 animate-pulse" aria-hidden="true" />
         )}
         <img
           src={product.image}
@@ -31,11 +31,16 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="text-blue-600 font-black text-lg">
             ${product.price}
           </span>
-          <button className="bg-gray-900 text-white text-xs px-3 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+          <button 
+            className="bg-gray-900 text-white text-xs px-3 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            aria-label={`Add ${product.title} to cart`}
+          >
             افزودن
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
+
+export default memo(ProductCard);
