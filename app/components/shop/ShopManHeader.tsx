@@ -23,7 +23,7 @@ export default function Header() {
         
         <Link to="/" className="flex items-center gap-2 group">
           <img 
-            src="/images/idehnologo.png" 
+            src="images/idehnologo.png" 
             alt="ایده نو" 
             className={`h-12 w-auto transition-transform ${!isScrolled && "shadow-[0_0_20px_rgba(37,99,235,0.4)]"}`}
           />
