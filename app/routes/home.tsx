@@ -103,9 +103,9 @@ export default function Home() {
         {isWaterFlowing && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* قطرات اصلی */}
-            {Array.from({ length: 300 }).map((_, i) => {
-              const size = Math.random() * 2 + 0.5;
-              const sprayX = (Math.random() - 0.5) * 150;
+            {Array.from({ length: 1800 }).map((_, i) => {
+              const size = Math.random() * 2 + 1.5;
+              const sprayX = (Math.random() - 0.5) * 250;
               return (
                 <div
                   key={`main-${i}`}
